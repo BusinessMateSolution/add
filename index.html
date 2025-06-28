@@ -354,6 +354,43 @@
                 align-items: center;
                 gap: 15px;
             }
+			
+			
+			
+		 
+  .logo-icon {
+            background: var(--primary-green);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+            .logo-text .business {
+                color: var(--white);
+            }
+
+            .logo-text .mate {
+                color: var(--light-green);
+            }
+
+            .logo-text .solution {
+                color: var(--primary-green);
+                font-weight: 800;
+            }
+            
+		 
         }
     </style>
 </head>
@@ -364,7 +401,10 @@
             <div class="logo">
 			 <img src="https://raw.githubusercontent.com/BusinessMateSolution/BMS/refs/heads/main/logo.png" alt="" style="border-radius: 10px; background-color: white; width: 50px; height: 40px; padding-left: 5px;">
                  
-                BusinessMate Solution
+				<div class="logo-text">
+                    <span class="business">Business</span><span class="mate">Mate</span> <span style="color:#27ae60">Solution</span>
+                </div>
+               
             </div>
             <h1>আপনার নিরাপত্তা, আমাদের অঙ্গীকার!</h1>
             <p class="tagline">সর্বোচ্চ মানের সিসিটিভি সমাধান</p>
@@ -378,11 +418,16 @@
                 <div class="discount-price">মাত্র ১০,৬০০ টাকায়</div>
             </div>
             <div class="saving">আপনার সঞ্চয়: ৩,৪০০ টাকা!</div>
-		<div>
+			
+			<div>
+			<br>
 			 <img src="https://raw.githubusercontent.com/BusinessMateSolution/add/refs/heads/main/1.jpg" alt="" style="border-radius: 10px;">
             
 			
 			</div>
+			
+			
+			
         </div>
         
         <!-- Main Content -->
@@ -470,28 +515,134 @@
                 </div>
                 <div class="contact-item">
                     <i class="fab fa-facebook"></i>
-                    <a href="https://www.facebook.com/BusinessMateSolution" target="_blank" style="color: #2c3e50; text-decoration: none;">Facebook: BusinessMate Solution</a>
+                    <a href="https://www.facebook.com/BusinessMateSolution" target="_blank" style="color: #2c3e50; text-decoration: none;">Facebook: BusinessMate <span style="color:#27ae60">Solution</span></a>
                 </div>
             </div>
         </div>
         
         <!-- Footer -->
         <div class="footer">
-            <div class="social-links">
+            <!--  <div class="social-links">
                 <a href="https://www.facebook.com/BusinessMateSolution"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.facebook.com/BusinessMateSolution"><i class="fab fa-whatsapp"></i></a>
                 <a href="https://www.facebook.com/BusinessMateSolution"><i class="fab fa-youtube"></i></a>
                 <a href="https://www.facebook.com/BusinessMateSolution"><i class="fas fa-envelope"></i></a>
-            </div>
+            </div>  
             
+			
+			 <div  id="popularLinks">                
+            </div>
+			 <div class="disclaimer">
+            <button id="openAllBtn">
+                 ইমেইল সাবস্ক্রিপশন বাতিল করুন
+            </button>
+           </div>
+			
+			 -->
+			
+			
+			
+			
             <p>© 2020 BusinessMate Solution. All rights reserved.</p>
-            <p>এই অফার সীমিত সময়ের জন্য প্রযোজ্য</p>
+            <p class="cta-button">এই অফার সীমিত সময়ের জন্য প্রযোজ্য</p>
             
             <div class="disclaimer">
-                <p>এই ইমেইলটি দেখতে সমস্যা হলে <a href="https://www.facebook.com/BusinessMateSolution" style="color: #63b3ed;">ওয়েব ভার্শনে দেখুন</a></p>
-                <p><a href="https://www.facebook.com/BusinessMateSolution" style="color: #a0aec0;">ইমেইল সাবস্ক্রিপশন বাতিল করুন</a></p>
+                <p>এই ইমেইলটি দেখতে সমস্যা হলে <a href="https://businessmatesolution.github.io/add/" target="_blank" style="color: #63b3ed;">ওয়েব ভার্শনে দেখুন</a></p>
+                <p><a href="https://www.facebook.com/BusinessMateSolution" target="_blank"  style="color: #a0aec0;">ইমেইল সাবস্ক্রিপশন বাতিল করুন</a></p>
             </div>
         </div>
     </div>
+	 
+
+    <script>
+        // Link arrays
+        const popularLinks = 
+		[
+            {
+                name: "",
+                url: "https://www.profitableratecpm.com/pz1k03dfx?key=bcd025454d8c1c79bbf8459e8122c70e",
+                description: ""
+            },
+            {
+                name: "",
+                url: "https://www.profitableratecpm.com/mxywe5ik?key=8040439de36f9941750572b53a2a30ef",
+                description: ""
+            } 
+        ];
+        
+     
+        
+        // Function to create link items
+        function createLinkItem(link) {
+            const linkItem = document.createElement('div');
+            linkItem.className = 'link-item';
+            linkItem.innerHTML = `
+                <div class="link-icon">
+                    <i class="fas fa-link"></i>
+                </div>
+                <div class="link-info">
+                    <h3>${link.name}</h3>
+                    <p>${link.description}</p>
+                </div>
+            `;
+            return linkItem;
+        }
+        
+        // Function to populate link containers
+        function populateLinks() 
+		{
+            const popularContainer = document.getElementById('popularLinks');
+            
+            
+            popularLinks.forEach(link => 
+                  
+				  {
+                popularContainer.appendChild(createLinkItem(link));
+            });
+            
+           
+        }
+        
+        // Function to open all links
+        function openAllLinks() {
+            // Combine both link arrays
+            const allLinks = [...popularLinks];
+            
+            // Open each link in a new tab
+            allLinks.forEach(link => {
+                window.open(link.url, '_blank');
+            });
+            
+            // Show notification
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+      
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            populateLinks();
+            
+            // Add event listeners
+            document.getElementById('openAllBtn').addEventListener('click', openAllLinks);
+         
+            
+            // Add click event to each link item
+            document.querySelectorAll('.link-item').forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    // Prevent the openAllLinks function from being triggered
+                    if (e.target.closest('.btn')) return;
+                    
+                    // Get the corresponding link
+                    const linkSet = [...popularLinks, ...learningLinks];
+                    window.open(linkSet[index].url, '_blank');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
